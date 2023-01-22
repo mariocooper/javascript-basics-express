@@ -9,9 +9,10 @@ numbersRouter.get('/add/:a/and/:b', (req, res) => {
   const a = parseInt(req.params.a, 10);
   const b = parseInt(req.params.b, 10);
 
-  return Number.isNaN(a) || Number.isNaN(b)
-    ? res.status(400).json({ error: 'Parameters must be valid numbers.' })
-    : res.status(200).json({ result: add(a, b) });
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+    return res.status(400).json({ error: 'Parameters must be valid numbers.' });
+  }
+  res.status(200).json({ result: add(a, b) });
 });
 
 // Subtract
@@ -19,9 +20,10 @@ numbersRouter.get('/subtract/:a/from/:b', (req, res) => {
   const a = parseInt(req.params.a, 0);
   const b = parseInt(req.params.b, 0);
 
-  return Number.isNaN(a) || Number.isNaN(b)
-    ? res.status(400).json({ error: 'Parameters must be valid numbers.' })
-    : res.status(200).json({ result: subtract(b, a) });
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+    return res.status(400).json({ error: 'Parameters must be valid numbers.' });
+  }
+  res.status(200).json({ result: subtract(b, a) });
 });
 
 // Multiply

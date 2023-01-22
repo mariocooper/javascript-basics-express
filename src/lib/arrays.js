@@ -1,9 +1,9 @@
 const getNthElement = (index, array) => {
   if (index > array.length - 1) {
-    return array[index - array.length]
+    return array[index - array.length];
   }
   return array[index];
-  };
+};
 
 const arrayToCSVString = array => {
   return array.toString();
@@ -26,23 +26,23 @@ const removeNthElement = (index, array) => {
 };
 
 const numbersToStrings = numbers => {
-  return numbers.map((num) => {
+  return numbers.map(num => {
     return num.toString();
   });
 };
 
 const uppercaseWordsInArray = strings => {
-  return strings.map((string) => {
+  return strings.map(string => {
     return string.toUpperCase();
   });
 };
 
 const reverseWordsInArray = strings => {
-  return strings.map((string) =>
+  return strings.map(string =>
     string
-    .split('')
-    .reverse()
-    .join('')
+      .split('')
+      .reverse()
+      .join(''),
   );
 };
 
@@ -59,7 +59,7 @@ const elementsStartingWithAVowel = strings => {
 };
 
 const removeSpaces = string => {
-  return string = string.split(' ').join('');
+  return (string = string.split(' ').join(''));
 };
 
 const sumNumbers = numbers => {
@@ -85,5 +85,5 @@ module.exports = {
   elementsStartingWithAVowel,
   removeSpaces,
   sumNumbers,
-  sortByLastLetter
+  sortByLastLetter,
 };
